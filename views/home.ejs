@@ -74,7 +74,10 @@
         <div class="mt-3">
             <h1 class="fs-1 text-white fw-medium">Best Movies</h1>
             <div class="row">
-                <% data.map((movie)=>{ %>
+                <% data.map((movie)=>{
+                    const dateParts = movie.date.split('-');
+                    const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+                    %>
                 <div class="col-lg-6 col-xxl-4">
                     <div class="t-card mb-30 position-relative text-center pb-4">
                         <div class="t-img position-relative">
@@ -83,7 +86,7 @@
                         <div class="t-content position-absolute start-0 end-0 top-50 pb-3 mt-4 opacity-0 hiding">
                             <h3 class="t-title text-white fs-1"><%= movie.title %></h3>
                             <p class="t-text text-white mx-auto px-4 fs-5"><%= movie.des %></p>
-                            <p class="t-text text-white mx-auto px-4 fs-5"><%= movie.date %></p>
+                            <p class="t-text text-white mx-auto px-4 fs-5"><%= formattedDate %></p>
                             <p class="t-text text-white mx-auto px-4 fs-4"><strong><%= movie.rating %></strong></p>
                             <button class="btn btn-outline-secondary add-to-cart me-2"><a href="/editData/<%= movie._id %>" class="text-decoration-none text-white px-2 py-3 fs-5">Edit</a></button>
                             <button class="btn btn-outline-danger add-to-cart"><a href="/deleteData/<%= movie._id %>" class="text-decoration-none text-white fs-5">Delete</a></button>

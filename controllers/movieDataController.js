@@ -16,12 +16,15 @@ const add_movie = async (req, res) => {
 
 const insertData = async (req, res) => {
   const { title,  date, rating, des, img } = req.body;
-  console.log({ title, date, rating,  des, img });
+  const dateParts = date.split('-');
+  const formattedDate = `${dateParts[0]}-${dateParts[1]}-${dateParts[2]}`;
+  console.log(formattedDate);
+  
 
   try {
     await movieModel.create({
       title,
-      date,
+      date:formattedDate,
       rating,
       des,
       img,

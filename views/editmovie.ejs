@@ -68,7 +68,7 @@
           <div class="mb-3">
             <label for="rating" class="form-label fs-4">Select Rating</label>
             <select name="rating" id="" class="form-select fs-4">
-              <option value="" <%=!movie.rating ? 'selected' : '' %>>select stars</option>
+              <option value="" <%=!movie.rating ? 'selected' : '' %>disabled>Choose Your Ratings</option>
               <option value="⭐" <%=movie.rating==='⭐' ? 'selected' : '' %>>⭐</option>
               <option value="⭐⭐" <%=movie.rating==='⭐⭐' ? 'selected' : '' %>>⭐⭐</option>
               <option value="⭐⭐⭐" <%=movie.rating==='⭐⭐⭐' ? 'selected' : '' %>>⭐⭐⭐</option>
